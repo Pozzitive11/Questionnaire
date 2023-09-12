@@ -63,10 +63,6 @@ export class AppComponent implements OnInit {
         [atLeastOneHobbyValidator]
       ),
     });
-
-    this.developerForm.valueChanges.subscribe(() => {
-      console.log(this.hobbiesArrayControl.hasError('atLeastOneHobby'));
-    });
   }
 
   onTechnologyChange() {
@@ -105,8 +101,8 @@ export class AppComponent implements OnInit {
     if (this.developerForm.valid) {
       const formValue = this.developerForm.value;
       formValue.dateOfBirth = this.formatDate(formValue.dateOfBirth);
-      console.log(formValue);
       this.developerForm.reset();
+      console.log(formValue);
     }
   }
 }
